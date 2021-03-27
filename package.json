@@ -1,72 +1,71 @@
 {
-    "name": "react-container-3d",
-    "version": "0.5.8",
-    "description": "A container for three.js canvas renderer as a react component",
-    "main": "lib/index.js",
-    "author": "lucascassiano",
-    "homepage": "https://github.com/lucascassiano/react-container-3d",
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/lucascassiano/react-container-3d.git"
-    },
-    "bugs": {
-        "url": "https://github.com/lucascassiano/react-container-3d/issues"
-    },
-    "files": [
-        "css",
-        "lib"
+  "name": "react-container-3d-multicam",
+  "version": "0.0.1",
+  "description": "A container for three.js canvas renderer as a react component, supporting switching between perspective and orthographic cameras. Originally created by lucascassiano.",
+  "main": "lib/index.js",
+  "author": "haphaistos2333",
+  "homepage": "https://github.com/Haphaistos2333/react-container-3d-multicam",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Haphaistos2333/react-container-3d-multicam.git"
+  },
+  "files": [
+    "css",
+    "lib"
+  ],
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.1.21",
+    "@storybook/addon-essentials": "^6.1.21",
+    "@storybook/addon-links": "^6.1.21",
+    "@storybook/cli": "^6.1.21",
+    "@storybook/react": "^6.1.21",
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^7.2.1",
+    "babel-jest": "^19.0.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-env": "^1.2.2",
+    "babel-preset-react": "^6.23.0",
+    "eslint": "^3.18.0",
+    "eslint-config-react-app": "^0.6.2",
+    "eslint-plugin-flowtype": "^2.30.4",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "jest": "^19.0.2",
+    "np": "^2.13.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rimraf": "^2.6.1"
+  },
+  "peerDependencies": {
+    "react": "~16.x"
+  },
+  "scripts": {
+    "sb": "npx sb init -f",
+    "start": "npm run storybook",
+    "build": "rimraf lib && babel src --out-dir lib --ignore test.js --copy-files",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "release": "npm run build && npm version patch && npm publish",
+    "git": "git add . && git commit -m \"new version (automatically generated)\" && git push origin master"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "jsx",
+      "js",
+      "json"
     ],
-    "devDependencies": {
-        "@kadira/storybook": "^2.35.3",
-        "@storybook/addon-actions": "^3.2.17",
-        "babel-cli": "^6.24.0",
-        "babel-core": "^6.18.2",
-        "babel-eslint": "^7.2.1",
-        "babel-jest": "^19.0.0",
-        "babel-preset-env": "^1.2.2",
-        "babel-preset-react": "^6.23.0",
-        "enzyme": "^2.8.0",
-        "eslint": "^3.18.0",
-        "eslint-config-react-app": "^0.6.2",
-        "eslint-plugin-flowtype": "^2.30.4",
-        "eslint-plugin-import": "^2.2.0",
-        "eslint-plugin-jsx-a11y": "^4.0.0",
-        "eslint-plugin-react": "^6.10.3",
-        "jest": "^19.0.2",
-        "np": "^2.13.1",
-        "react": "^15.4.2",
-        "react-addons-test-utils": "^15.4.2",
-        "react-dev-utils": "^0.5.2",
-        "react-dom": "^15.4.2",
-        "rimraf": "^2.6.1"
-    },
-    "peerDependencies": {
-        "react": "15.x"
-    },
-    "scripts": {
-        "start": "npm run storybook",
-        "build": "rimraf lib && babel src --out-dir lib --ignore test.js --copy-files",
-        "test": "jest",
-        "test:watch": "jest --watch",
-        "storybook": "start-storybook -p 6006",
-        "build-storybook": "build-storybook",
-        "release": "npm run build && npm version patch && npm publish",
-        "git": "git add . && git commit -m \"new version (automatically generated)\" && git push origin master"
-    },
-    "jest": {
-        "moduleFileExtensions": [
-            "jsx",
-            "js",
-            "json"
-        ],
-        "testPathIgnorePatterns": [
-            "<rootDir>/(lib|docs|node_modules)/"
-        ]
-    },
-    "dependencies": {
-        "react-cubeview": "^2.6.22",
-        "three": "^0.88.0",
-        "three-react-obj-loader": "^1.0.4"
-    }
+    "testPathIgnorePatterns": [
+      "<rootDir>/(lib|docs|node_modules)/"
+    ]
+  },
+  "dependencies": {
+    "react-cubeview": "^2.6.22",
+    "three": "^0.88.0",
+    "three-react-obj-loader": "^1.0.4"
+  }
 }

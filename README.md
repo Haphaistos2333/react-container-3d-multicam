@@ -1,10 +1,22 @@
 # react-container-3d
 A container for three.js canvas renderer as a react component
 
+===
+
+This project is originally created by Lucas Cassiano.
+Haphaistos2333 is forking this project to develop a multi-camera support.
+
+TODO:
+ - Add an orthographic camera along with the existing perspective camera.
+ - The two cameras should always share the same position and rotation.
+ - One prop should be passed to the component in order to change the camera.
+
+===
+
 ![alt text](https://github.com/lucascassiano/react-container-3d/raw/master/docs/react-container3d.gif)
 
 ## Install
-```javascript
+```bash
 npm install --save react-container-3d && three
 ```
 ## Live Demo
@@ -23,7 +35,7 @@ Apps using this component
 import * as THREE from 'three';
 import Container3d from 'react-container3d';
 
-...
+// ...
 
 <div className="canvas-3d">
 <Container3d aspect={16 / 9} percentageWidth={"100%"}/>
