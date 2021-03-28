@@ -139,7 +139,7 @@ class Container3d extends Component {
     this.threeCanvas.current.height = height;
 
     raycaster = new THREE.Raycaster();
-    window.addEventListener("mousemove", this.onDocumentMouseMove, false);
+    window.addEventListener("mousemove", this.onDocumentMouseMove, false); // TODO: BUG: did not remove
 
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 1000);
@@ -315,7 +315,7 @@ class Container3d extends Component {
   onDocumentMouseMove(event) {
     event.preventDefault();
 
-    let rect = this.threeCanvas.current.getBoundingClientRect();
+    let rect = this.threeCanvas.current.getBoundingClientRect(); // TODO: Bug
 
     mouse.x = (event.clientX - rect.left) / rect.width * 2 - 1;
     mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
